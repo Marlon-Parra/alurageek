@@ -1,0 +1,20 @@
+[
+  {
+    "nombre": "nsnxj",
+    "precio": "24",
+    "imagen": "https://ethic.es/wp-content/uploads/2023/03/imagen.jpg",
+    "id": "85517f43-4a12-4b19-ad9d-585cee3b6e91"
+  },
+  {
+    "nombre": "Colombia",
+    "precio": "888",
+    "imagen": "https://www.portafolio.co/files/article_new_multimedia/uploads/2024/01/24/65b179df13c00.jpeg",
+    "id": "4ef1ef9f-53e2-4216-94ad-e8063ae4f148"
+  },
+  {
+    "nombre": "Mapa",
+    "precio": "777",
+    "imagen": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/Colombia_in_its_region_%28San_Andres_and_Providencia%29.svg/1200px-Colombia_in_its_region_%28San_Andres_and_Providencia%29.svg.png",
+    "id": "4c4e697f-f262-4686-bf80-9d356f8d4fef"
+  }
+]

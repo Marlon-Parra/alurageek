@@ -1,0 +1,252 @@
+@media (max-width: 600px) {
+
+@keyframes cambio-color {
+  0% { color: red; }
+  25% { color: white; }
+  50% { color: orangered; }
+  75% { color: yellow; }
+  100% { color: red; }
+}
+
+.titulo-proyecto{
+  padding: 20px;
+  font-size: 25px;
+  text-align: center;
+  background-color: mediumblue;
+  animation: cambio-color 5s infinite;
+}
+.titulo-proyecto::before {
+  content: '\1F469\200D\1F4BB\200D\1F469\200D\1F4BB\200D\1F469\200D\1F4BB'; /* Representación de los emojis */
+  position: relative;
+  bottom: 5px;
+}
+
+.fondo-encabezado{
+  background-color: lightgray;
+  padding: 2px;
+}
+
+.agregar-producto{
+  padding-top: 3em;
+  font-size: 32px;
+  text-align: center; /* Centra horizontalmente el texto */
+  font-weight: bold; /* Hace que el texto esté en negrita */
+  display: block; /* Coloca el texto en una línea aparte */
+  margin-bottom: 0.5em; /* Espacio entre las dos líneas */
+}
+
+.formulario-container {
+  text-align: center;
+}
+
+.formulario {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.formulario-producto {
+  width: calc(100% - 20px); /* Restamos 20px al ancho total */
+  padding: 12px; /* Aumentamos el padding para aumentar la altura */
+  margin-bottom: 20px; /* Aumentamos el margen inferior para separar los inputs */
+  border: 2px solid #007bff; /* Cambiamos el borde a 2px sólido azul */
+  border-radius: 15px;
+  box-sizing: border-box;
+  color: #007bff; /* Cambiamos el color del texto a azul */
+}
+
+.container-inputs {
+  padding-left: 17px;
+  padding-right: 10px;
+}
+
+
+.formulario-producto::placeholder {
+  color: #007bff; /* Cambiamos el color del placeholder a azul */
+}
+
+/* Estilo para placeholder en color gris */
+.formulario-producto:focus::placeholder {
+  color: rgba(39, 40, 48, 1);
+}
+
+.formulario-producto{
+  color:black;
+}
+
+.botones-container {
+  text-align: center;
+}
+
+.boton-formulario {
+  padding: 10px 20px;
+  margin: 10px;
+  margin-top: 3px;
+  border: none;
+  border-radius: 8px;
+  background-color: #007bff;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.boton-formulario:hover {
+  background-color: #0056b3;
+}
+
+.boton-formulario[type="reset"] {
+  background-color: #dc3545;
+}
+
+.boton-formulario[type="reset"]:hover {
+  background-color: #bd2130;
+}
+
+.mis-productos{
+  padding-top: 2em;
+  font-size: 32px;
+  text-align: center; /* Centra horizontalmente el texto */
+  font-weight: bold; /* Hace que el texto esté en negrita */
+  display: block; /* Coloca el texto en una línea aparte */
+  margin-bottom: 0.5em; /* Espacio entre las dos líneas */
+}
+
+
+.producto-container {
+  display: flex;
+  flex-wrap: wrap; /* Permitir que los productos se envuelvan en dispositivos pequeños */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.producto-ejemplo {
+  background-color: orange;
+  border: 2.7px solid black;
+  margin-right: 5px; /* Espacio entre los productos */
+  margin-bottom: 10px; /* Espacio inferior entre los productos */
+  flex: 1 1 calc(50% - 5px); /* Cambiar el ancho a 50% y restar el margen derecho */
+  max-width: calc(50% - 5px); /* Ancho máximo igual al 50% menos el margen derecho */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Evita que el texto se salga del contenedor */
+  border-radius: 7px;
+  box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.3); /* Sombras de 5px en la parte inferior y izquierda, color gris claro */
+width: Hug (196px)px;
+height: Hug (258px)px;
+padding: 10px 0px 0px 0px;
+gap: 10px;
+border: 3px 0px 0px 0px;
+opacity: 0px;
+justify-items: center;
+align-items: center;
+}
+
+.producto-ejemplo:last-child {
+  margin-right: 0; /* Quita el margen derecho del último producto */
+}
+
+.producto-ejemplo h3,
+.producto-ejemplo p {
+  margin: 0; /* Resetear el margen */
+  font-size: 20px;
+  padding-top: 10px;
+  color: white;
+  position: relative;
+  top:5px;
+  margin-left: 6px;
+}
+
+.producto-ejemplo p{
+  position: relative;
+  top: 20px;
+}
+.producto-ejemplo img {
+  border: 2.7px solid black;
+  width: 176px;
+  height: 174px;
+  gap: 0px;
+  border-radius: 5px 0px 0px 0px;
+  border: 3px 0px 0px 0px;
+  opacity: 0px;
+
+}  
+
+.eliminar-icono {
+  background-color: transparent;
+  width: 20px; /* Ancho del botón */
+  height: 20px; /* Altura del botón */
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23fff' d='M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z'/%3E%3C/svg%3E"); /* SVG como fondo del botón */
+  background-repeat: no-repeat; /* No repetir el fondo */
+  background-size: contain; /* Ajustar el tamaño del fondo */
+  border: none; /* Sin borde */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+  position: relative;
+  bottom: 12px;
+  left: 65px;
+}
+
+.modal-confirmacion {
+  height: 20%;
+  width: 46%;
+  background-color: #2EC4E4; /* Queda igual */
+  border: 2px solid #313636;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  position: absolute; /* Asegura que el modal se posicione de manera absoluta */ 
+  transform: translate(0%); /* Centra el modal con respecto a su contenedor padre */
+  z-index: 1000;
+}
+
+.modal-confirmacion p {
+  padding-top: 8px;
+  text-align: Center;
+  margin-bottom: 10px;
+  font-size: 19px;
+}
+
+.modal-confirmacion button {
+  margin-top: 10px;
+  margin-left: 17px;
+  font-size: 15px;
+  color: white; /* Color blanco para buen contraste */
+  border: 1px solid #313636;
+  background-color: #028090; /* Un tono más oscuro del mismo espectro para armonía */
+}
+
+footer {
+  background-color: mediumblue;
+  text-align: center;
+  padding-top: 25px; /* Aumenta el padding superior */
+  padding-bottom: 25px; /* Aumenta el padding inferior */
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3); /* Sombra en la parte superior */
+  margin-top: 15px;
+}
+
+footer h1 {
+  margin-bottom: 10px; /* Agrega margen inferior para separar el h1 */
+}
+
+footer em {
+  font-size: 15px;
+  padding: 20px;
+  color: white;
+  margin-bottom: 10px; /* Agrega margen inferior para separar el em */
+}
+
+footer p {
+  font-size: 15px;
+  color: #B7B8C4;
+  margin-top: 10px; /* Agrega margen inferior para separar el p */
+}
+
+.titulo-footer {
+  text-align: center;
+  font-size: 20px;
+  animation: cambio-color 5s infinite;
+}
+
+.titulo-footer::before {
+  content: '\1F469\200D\1F4BB\200D\1F469\200D\1F4BB\200D\1F469\200D\1F4BB'; /* Representación de los emojis */
+  position: relative;
+  bottom: 5px;
+}
+}

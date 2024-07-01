@@ -1,0 +1,263 @@
+/* Asegura que el contenido principal ocupe todo el espacio disponible menos el espacio del footer */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1; /* Hace que el contenedor principal ocupe todo el espacio disponible */
+}
+
+/* Estilos para tabletas (ancho entre 768px y 1024px) */
+
+@media (min-width: 768px) and (max-width: 1024px){
+
+@keyframes cambio-color {
+0% { color: red; }
+25% { color: white; }
+50% { color: orangered; }
+75% { color: yellow; }
+100% { color: red; }
+}
+
+.titulo-proyecto{
+padding: 35px;
+font-size: 40px;
+text-align: center;
+background-color: mediumblue;
+animation: cambio-color 5s infinite;
+}
+.titulo-proyecto::before {
+content: '\1F469\200D\1F4BB\200D\1F469\200D\1F4BB\200D\1F469\200D\1F4BB'; /* Representación de los emojis */
+position: relative;
+bottom: 10px;
+}
+
+.fondo-encabezado{
+background-color: lightgray;
+padding: 5px;
+}
+
+.container-agregar-productos{
+width: 40%; 
+}
+
+.container-agregar-productos, .container-productos {
+display: inline-block;
+vertical-align: top;
+margin-top: 2em;
+}
+
+.agregar-producto {
+margin-top:10px;
+font-size: 32px;
+padding-left: 70px;
+text-align: left;
+font-weight: bold;
+margin-bottom: 0.5em;
+}
+
+.formulario-producto {
+width: calc(100% - 40px);
+max-width: 300px;
+padding: 15px;
+margin-bottom: 10px;
+font-size: 20px;
+border: 3px solid #007bff;
+border-radius: 30px;
+box-sizing: border-box;
+color: #007bff;
+flex-direction: column;
+padding-right: 40px;
+}
+
+.container-inputs {
+padding-left: 40px;
+}
+
+.formulario-producto input {
+padding: 10px;
+border-radius: 5px;
+border: 1px solid #007bff;
+box-sizing: border-box;
+}
+
+.formulario-producto::placeholder {
+color: #007bff;
+}
+
+.formulario-producto:focus::placeholder {
+color: rgba(39, 40, 48, 1);
+}
+
+.formulario-producto {
+color: black;
+}
+
+.botones-container {
+text-align: left;
+padding-left: 75px;
+}
+
+.boton-formulario {
+padding: 10px 20px;
+margin: 10px;
+border: none;
+border-radius: 10px;
+background-color: #007bff;
+color: #fff;
+font-size: 20px;
+cursor: pointer;
+}
+
+.boton-formulario:hover {
+background-color: #0056b3;
+}
+
+.boton-formulario[type="reset"] {
+background-color: #dc3545;
+}
+
+.boton-formulario[type="reset"]:hover {
+background-color: #bd2130;
+}
+
+.container-productos {
+max-width: 58%;
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3); /* Sombra en todos los lados */
+box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
+.mis-productos {
+font-size: 32px;
+font-weight: bold;
+margin: 0; /* Elimina el margen para evitar espacios adicionales */
+padding: 10px 0;
+text-align: center;
+}
+
+.producto-container {
+display: flex;
+flex-wrap: wrap;
+padding-left: 15px; /* Reduzco el padding izquierdo */
+padding-right: 15px; /* Reduzco el padding derecho */
+justify-content: space-between;
+}
+
+.producto-ejemplo {
+background-color: orange;
+border: 2.7px solid black;
+padding: 5px; /* Reduzco el espacio interno */
+margin-bottom: 10px; /* Espacio inferior entre los productos */
+flex-basis: calc(33.33% - 10px); /* Establece el ancho de cada elemento en aproximadamente un tercio del contenedor */
+max-width: calc(33.33% - 10px); /* Ancho máximo igual al tercio del contenedor */
+border-radius: 7px;
+box-shadow: -3px 3px 3px rgba(0, 0, 0, 0.3);
+box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
+}
+
+.producto-ejemplo img {
+border: 2.7px solid black;
+border-radius: 5px;
+width: 100%; /* Ancho fijo para la imagen */
+height: 150px; /* Alto fijo para la imagen */
+object-fit: cover; /* Ajusta el tamaño de la imagen manteniendo su proporción */
+}
+
+.producto-ejemplo h3,
+.producto-ejemplo p {
+margin: 0; /* Resetear el margen */
+font-size: 15px;
+padding-top: 10px;
+color: white;
+position: relative;
+top:5px;
+margin-left: 6px;
+font-size: 20px;
+}
+
+.producto-ejemplo p{
+position: relative;
+top: 20px;
+}
+
+.eliminar-icono {
+background-color: transparent;
+width: 22px; /* Ancho del botón */
+height: 22px; /* Altura del botón */
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 448 512'%3E%3Cpath fill='%23fff' d='M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z'/%3E%3C/svg%3E"); /* SVG como fondo del botón */
+background-repeat: no-repeat; /* No repetir el fondo */
+background-size: contain; /* Ajustar el tamaño del fondo */
+border: none; /* Sin borde */
+cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+position: relative;
+left: 85%;
+}
+
+.modal-confirmacion {
+  height: 190px; /* Ajusta la altura según sea necesario */
+  width: 150px; /* Ajusta el ancho según sea necesario */
+  background-color: #00FFE4;
+  border: 1px solid #313636;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: none;
+  position: absolute; /* Posición absoluta para el modal */
+  z-index: 1000; /* Asegura que esté sobre otros elementos */
+}
+
+
+.modal-confirmacion p {
+text-align: center;
+margin-bottom: 10px;
+font-size: 22px;
+}
+
+.modal-confirmacion button {
+font-size: 17px;
+font-weight: 600;
+color:black;
+border: 1px solid #313636;
+background-color: #00FFE4
+}
+
+
+footer {
+background-color: mediumblue;
+text-align: center;
+padding-top: 35px; /* Aumenta el padding superior */
+padding-bottom: 35px; /* Aumenta el padding inferior */
+box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.3); /* Sombra en la parte superior */
+margin-top: 15px;
+}
+
+footer h1 {
+margin-bottom: 15px; /* Agrega margen inferior para separar el h1 */
+}
+
+footer em {
+font-size: 25px;
+color: white;
+margin-bottom: 15px; /* Agrega margen inferior para separar el em */
+}
+
+footer p {
+font-size: 25px;
+color: #B7B8C4;
+margin-top: 15px;
+}
+
+.titulo-footer {
+text-align: center;
+font-size: 40px;
+animation: cambio-color 5s infinite;
+}
+
+.titulo-footer::before {
+content: '\1F469\200D\1F4BB\200D\1F469\200D\1F4BB\200D\1F469\200D\1F4BB'; /* Representación de los emojis */
+position: relative;
+bottom: 10px;
+}
+
+}

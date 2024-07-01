@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>AluraGeek</title>
+
+<link rel="stylesheet" href="./css/style.css">
+ <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha384-PPIZEGYM1v8zp5Py7UjFb79S58UeqCL9pYVnVPURKEqvioPROaVAJKKLzvH2rDnI" crossorigin="anonymous">
+</head>
+
+<body>
+  
+  <header>
+    <section>
+      <h1 class="titulo-proyecto" id="Titulos">AluraGeek</h1>
+      <div class="fondo-encabezado"></div>
+    </section>
+  </header>
+  
+  <main>
+  
+  <div class="container-agregar-productos">
+    <h1 class="agregar-producto" id="Titulos">AGREGAR <br>PRODUCTO:</h1>
+
+    <form action="" class="formulario">
+      <div class="container-inputs">
+        <input id="nombre-producto" class="formulario-producto" name="nombre-producto" type="text" placeholder="Nombre del producto " required>
+        <input id="precio-producto" class="formulario-producto" name="precio-producto" type="number" placeholder="Precio del producto" required>
+        <input id="imagen-producto" class="formulario-producto" name="imagen-producto" type="url" placeholder="URL del producto" required>
+      </div>  
+    
+      <div class="botones-container">
+        <button class="boton-formulario"  type="submit">Enviar</button>
+        <button class="boton-formulario" type="reset">Limpiar</button>
+      </div>
+    </form>
+  </div>
+  
+  <div id="modal-confirmacion" class="modal-confirmacion">
+    <p>¿Estás seguro de que quieres eliminar este producto?</p>
+    <button id="btn-confirmar-eliminar" class="btn-modal" >Sí</button>
+    <button id="btn-cancelar-eliminar" class="btn-modal"   >Cancelar</button>
+  </div>
+
+
+  <section class="container-productos">
+    <h1 class="mis-productos" id="Titulos">MIS PRODUCTOS:</h1>
+  
+    <div class="producto-container">
+     
+    </div>
+</section>
+
+  
+  </main>
+ 
+  <footer>
+    <h1 class="titulo-footer" id="Titulos">AluraGeek</h1>
+    <em>Desarrollado por Marlon Parra</em>
+    <p>Alura latam 202X</p>
+  </footer>
+
+
+
+  <script src="main.js"></script>
+  
+  
+</body>
+</html>

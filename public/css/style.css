@@ -1,0 +1,13 @@
+@import url(reset.css);
+@import url(desktop.css);
+@import url(movil.css);
+@import url(tablet.css);
+
+
+body, .boton-formulario,.formulario-producto::placeholder,.formulario-producto, .btn-modal{
+  font-family: 'Montserrat', sans-serif;
+}
+#Titulos {
+    font-family: 'Press Start 2P', cursive;
+}
+
