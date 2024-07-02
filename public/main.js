@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
       imagen: imagenProducto
     };
 
-    fetch('http://localhost:3000/products', {
+    fetch('https://alurageek-xi-three.vercel.app/api/products', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
       const productoAEliminar = botonEliminar.closest('.producto-ejemplo');
       mostrarConfirmacion(productoAEliminar, () => {
-        fetch(`http://localhost:3000/products/${producto.id}`, {
+        fetch(`https://alurageek-xi-three.vercel.app/api/products/${producto.id}`, {
           method: 'DELETE'
         })
         .then(response => {
@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Función para cargar productos
   function cargarProductos() {
-    fetch('http://localhost:3000/products')
+    fetch('https://alurageek-xi-three.vercel.app/api/products')
     .then(response => {
       if (!response.ok) {
         throw new Error('Error al cargar los productos');
