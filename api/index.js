@@ -2,7 +2,7 @@ const express = require('express');
 const fs = require('fs');
 const path = require('path');
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 const dataPath = path.join(__dirname, '..', 'data.json');
 
@@ -38,13 +38,16 @@ app.post('/api/products', (req, res) => {
 app.delete('/api/products/:id', (req, res) => {
   const { id } = req.params;
   const data = readData();
+  console.log(`Intentando eliminar producto con id: ${id}`);
   const newData = data.filter(product => product.id !== id);
 
   if (data.length === newData.length) {
+    console.log(`Producto con id: ${id} no encontrado`);
     return res.status(404).json({ message: 'Producto no encontrado' });
   }
 
   writeData(newData);
+  console.log(`Producto con id: ${id} eliminado`);
   res.json({ message: 'Producto eliminado' });
 });
 
@@ -52,3 +55,4 @@ app.delete('/api/products/:id', (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor corriendo en http://localhost:${port}`);
 });
+
