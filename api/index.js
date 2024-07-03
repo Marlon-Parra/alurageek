@@ -1,58 +1,64 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+const cors = require('cors');
+const { v4: uuidv4 } = require('uuid');
 const app = express();
 const port = process.env.PORT || 3000;
 
-const dataPath = path.join(__dirname, '..', 'data.json');
-
-function readData() {
-  const data = fs.readFileSync(dataPath);
-  return JSON.parse(data);
-}
-
-function writeData(data) {
-  fs.writeFileSync(dataPath, JSON.stringify(data, null, 2));
-}
-
-// Configuración del servidor
+app.use(cors());
 app.use(express.json());
 
-// Ruta para obtener todos los productos
-app.get('/api/products', (req, res) => {
-  const data = readData();
-  res.json(data);
+const dataFilePath = path.join(__dirname, '..', 'data.json');
+
+function readProducts() {
+    try {
+        const data = fs.readFileSync(dataFilePath);
+        return JSON.parse(data);
+    } catch (error) {
+        console.error('Error al leer el archivo data.json:', error);
+        return [];
+    }
+}
+
+function writeProducts(products) {
+    try {
+        fs.writeFileSync(dataFilePath, JSON.stringify(products, null, 2));
+    } catch (error) {
+        console.error('Error al escribir en el archivo data.json:', error);
+    }
+}
+
+app.get('/', (req, res) => {
+    res.send('Bienvenido a la API de productos');
 });
 
-// Ruta para agregar un nuevo producto
 app.post('/api/products', (req, res) => {
-  const data = readData();
-  const nuevoProducto = req.body;
-  nuevoProducto.id = Date.now().toString();
-  data.push(nuevoProducto);
-  writeData(data);
-  res.status(201).json(nuevoProducto);
+    const products = readProducts();
+    const product = req.body;
+    product.id = uuidv4();
+    products.push(product);
+    writeProducts(products);
+    res.status(201).send(product);
 });
 
-// Ruta para eliminar un producto
+app.get('/api/products', (req, res) => {
+    const products = readProducts();
+    res.send(products);
+});
+
 app.delete('/api/products/:id', (req, res) => {
-  const { id } = req.params;
-  const data = readData();
-  console.log(`Intentando eliminar producto con id: ${id}`);
-  const newData = data.filter(product => product.id !== id);
-
-  if (data.length === newData.length) {
-    console.log(`Producto con id: ${id} no encontrado`);
-    return res.status(404).json({ message: 'Producto no encontrado' });
-  }
-
-  writeData(newData);
-  console.log(`Producto con id: ${id} eliminado`);
-  res.json({ message: 'Producto eliminado' });
+    const productId = req.params.id;
+    const products = readProducts();
+    const updatedProducts = products.filter(product => product.id !== productId);
+    writeProducts(updatedProducts);
+    res.status(204).send();
 });
 
-// Iniciar el servidor
 app.listen(port, () => {
-  console.log(`Servidor corriendo en http://localhost:${port}`);
+    console.log(`Server running at http://localhost:${port}/`);
 });
+
+
+
 
