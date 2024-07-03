@@ -55,8 +55,12 @@ app.delete('/api/products/:id', (req, res) => {
     res.status(204).send();
 });
 
+app.get('/favicon.ico', (req, res) => res.status(204).end());
+
 app.listen(port, () => {
     console.log(`Server running at http://localhost:${port}/`);
+});
+
 });
 
 
